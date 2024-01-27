@@ -52,13 +52,34 @@ location_list = ['Липова Долина', 'Малий Любінь', 'Зел
                  'Лісовий Гай', 'Вишневе Поле', 'Ромашкове Поле']
 
 
-def random_person():
-    random_people = random.choice(name_list)
-    random_surname = random.choice(surnames_list)
-    random_location = random.choice(location_list)
-    random_persons = {'name': random_people, 'surname': random_surname,
-                      'location': random_location}
-    print(random_persons)
+# Cтворюю функція,яка генерує рандомну людину
+def generate_random_person():
+    persons = {
+        'name': random.choice(name_list),
+        'surname': random.choice(surnames_list),
+        'location': random.choice(location_list),
+    }
+    return persons
 
 
-random_person()
+generate_random_person()
+
+# набір з рандомних людей які містяться в словнику
+people_list = []
+# словник з рандомно згенерованих людей
+random_person = {}
+
+# Цикл побудований на логіці,що він створює людей тільки на ту кількость імен
+# яка є в name_list (так як ім'я -це буде головний ключ в нащому
+# словнику)
+for i in range(len(name_list)):
+    random_person = generate_random_person()
+    people_list.append(random_person)
+
+# Зі створеного списку ми можемо дістати словник з 1 рандомної людини
+random_person_from_list = random.choice(people_list)
+print(random_person_from_list)
+
+# Список зі словників рандомних людей
+print(people_list)
+
