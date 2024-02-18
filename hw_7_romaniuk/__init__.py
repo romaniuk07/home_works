@@ -1,0 +1,1 @@
+from hw_7_romaniuk.ex_1.mat_func_1 import multipl_func

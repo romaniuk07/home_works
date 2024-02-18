@@ -1,0 +1,1 @@
+from .mat_fync_2 import multipl_func
